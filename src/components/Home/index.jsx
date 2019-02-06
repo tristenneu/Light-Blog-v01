@@ -15,14 +15,14 @@ class Home extends Component {
     componentDidMount() {
         const { onLoad } = this.props;
 
-        axios("http://localhost:8000/api/articles")
+        axios("https://light-blog-v01.herokuapp.com/api/articles")
             .then((res) => onLoad(res.data));
     }
 
     handleDelete(id) {
         const { onDelete } = this.props;
 
-        return axios.delete(`http://localhost:8000/api/articles/${id}`)
+        return axios.delete(`https://light-blog-v01.herokuapp.com/api/articles/${id}`)
         .then(() => onDelete(id));
     }
 
